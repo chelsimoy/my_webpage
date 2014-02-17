@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chelsi Moy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="bootstrap/stylish-portfolio/css/stylish-portfolio.css" rel="stylesheet">
+  	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="jquery.parallax-1.1.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function($){
+			$('.slide').css({'height': $(window).height()});
+
+			//bug in ios, cant use fixed backgrounds, or parallax
+			if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
+
+				/**** ONLY FOR iOS ****/
+				$('.slide').css({
+					'background-attachment':'scroll',
+					'height' : 'auto',
+					'min-height' : $(window).height()
+				});
+				$('.container').css({
+					'top': '0',
+					'-webkit-transform': 'none'
+				});
+				$(window).on('orientationchange', function(){
+					$('.slide').css('min-height' , $(window).height());
+				});
+
+
+			} else {
+
+				/**** DESKTOP ****/
+
+				$('.firstslide').parallax("50%", 0.1);
+				//$('.secondslide').parallax("50%", 0.1);
+				//$('.textsecond').parallax("1%", 0.8);
+				$('.thirdslide').parallax("50%", 0.1);
+				//$('.fourthslide').parallax("50%", 0.1);
+				$('.fifthslide').parallax("50%", 0.1);
+				$('.sixthslide').parallax("50%", 0.1);
+				$('.seventhslide').parallax("50%", 0.1);
+				$('.eighthslide').parallax("50%", 0.1);
+
+
+				//This makes each slide the height of the browser viewport
+				$(window).on('resize', resize);
+				function resize(){
+					$('.slide').css({'height': $(window).height()});
+				}
+
+			}
+
+			
+
+
+
+
+		}); 
+		
+	</script>
+	<style type="text/css" media="screen">
+	
+		/*.text{
+			font-family: "Helvetica Neue", serif, sans-serif;
+			font-weight: 300;
+			letter-spacing: 0.1em;
+		}*/
+
+		body{
+			background-color: #0A5173;
+		}
+
+		.firsttext h1{
+			font-size: 50px;
+			font-weight: 400;
+			font-size: 8vw;
+			text-shadow: 1px 2px 50px #000000;
+			text-align: center;
+			left: 30%;
+			color:white;
+			letter-spacing: 2px;
+			position: absolute;
+			top:50%;
+			-webkit-transform:translateY(-50%);
+			   -moz-transform:translateY(-50%);
+			    -ms-transform:translateY(-50%);
+			     -o-transform:translateY(-50%);
+			        transform:translateY(-50%);
+		}
+
+		.firsttext h3{
+			font-size: 25px;
+			font-weight: 300;
+			font-size: 4vw;
+			text-shadow: 1px 2px 40px #000000;
+			text-align: center;
+			color:white;
+			position: absolute;
+			top:62%;
+			left: 42%;
+			/*letter-spacing: 2px;*/ 
+			-webkit-transform:translateY(-50%);
+			   -moz-transform:translateY(-50%);
+			    -ms-transform:translateY(-50%);
+			     -o-transform:translateY(-50%);
+			        transform:translateY(-50%);
+		}
+
+		/* fix for bars between slides */
+		.slide h2:first-child, 
+		.slide h3:first-child,
+		.slide h4:first-child,
+		.slide h5:first-child{
+			margin-top:0;
+		}
+	
+		.firstslide{
+			background: url('images/intro-image-walking.jpg') 50% 0 no-repeat fixed;
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+		}
+		
+		.secondslide{
+			/* background image? */
+			color:white;
+			position: relative;
+		}
+
+		.secondslide .aboutme{
+			text-align: center;
+			color:white;
+			font-size: 30px;
+			font-size: 3vw; /* responsive text on some browsers */
+			font-weight: 100;
+
+		}
+
+		.secondslide p{
+			font-size: 18px;
+			font-weight: 100;
+			text-align: justify;
+			letter-spacing: 1.5px;
+			line-height: 30px;
+
+		}
+		
+		/* center the container */
+		.secondslide .container{
+			position: relative;
+			top:50%;
+			-webkit-transform:translateY(-50%);
+			   -moz-transform:translateY(-50%);
+			    -ms-transform:translateY(-50%);
+			     -o-transform:translateY(-50%);
+			        transform:translateY(-50%);
+		}
+
+		
+		.thirdslide{
+			background: url('images/half-dome.jpg?1') 50% 0 no-repeat fixed;
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+		}
+		
+		.fourthslide{
+			background: white;
+		}
+		
+		.fourthslide h2{
+			position: relative;
+			margin-top: 10%;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 30px;
+			font-size: 3vw; 
+			font-weight: 300;
+			border-style: 0 0 1px 0 #fff; 
+		}
+
+		.fourthslide h4{
+			font-weight: 300;
+		}
+
+		.fifthslide{
+			background: url('images/surf.jpg?')  50% 0 no-repeat fixed;
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+					background-size: cover;
+		}
+		
+		.sixthslide{
+			background: white;
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+			        background-size: cover;
+			
+		}
+
+		.sixthslide h2{
+			position: relative;
+			margin-top: 10%;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 30px;
+			font-size: 3vw; 
+			font-weight: 300;
+			border-style: 0 0 1px 0 #fff; 
+		}	
+		
+		.sixthslide p{
+			font-size: 15px;
+		
+		}
+
+		.seventhslide{
+			background:url('images/yellowstone.jpg') 50% 0 no-repeat fixed;
+			-webkit-background-size: cover;
+			   -moz-background-size: cover;
+			     -o-background-size: cover;
+					background-size: cover;
+		}
+	
+		.eighthslide{
+		  	background:#0a5175 50% 0 no-repeat fixed;
+		  	background-size: cover;
+		  	color: white;
+
+		  }
+		.eighthslide h2{
+			font-weight: 100;
+		}
+	
+		.ninthslide{
+	  		background: white;
+	  		background-size: cover;
+	  	}
+	
+		.ninthslide h4{
+			font-weight: 200;
+		}
+
+		.photocaption{
+			color: white;
+			font-size: 18px;
+			letter-spacing: 1px;
+			font-weight: 300;
+			
+		}
+		.fifthslide .photocaption{
+			color: black;
+			font-weight: 500;
+			text-shadow: 1px 0px 0px #ffffff;
+		}
+		.seventhslide .photocaption{
+			color: black;
+			font-weight: 500;
+			text-shadow: 1px 0px 0px #ffffff;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<!-- intro-->
+	<div class="firstslide slide">
+		<div class="firsttext">
+		 <h1>Chelsi Moy</h1>
+
+
+		 <h3>Journalist</h3>
+		</div> 
+	</div>
+	
+	<!--Bio -->
+	<div class="secondslide slide"> 
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 text-center" style="margin-top: 10%">
+					<h2 class="aboutme">About Me</h2>
+					<hr>
+				</div>
+			</div><!-- end .row -->
+
+			<div class="row">
+				
+		 		<div class="col-sm-6 col-sm-offset-3 about-copy">
+					<p>Hi. I'm Chelsi and I'm a visual, audio and print journalist who loves data mining and dabbles in coding. My work has been published in the New York Times, Washington Post and Chicago's WBEZ. I was born in Montana, but today I live in the San Francisco Bay Area and study multimedia, visual journalism and data visualization at UC Berkeley's Graduate School of Journalism. When I'm not working, I'm outside.</p>
+				</div>
+			</div><!-- end .row -->
+		</div>
+
+	</div>
+		
+	<!--photo1_yosemite-->
+	<div class="thirdslide slide" style="position:relative;">
+		<div class="photocaption">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-8" style="position: absolute; bottom:50px; right:20px; text-align:right;">
+				<p>Half Dome, Yosemite National Park, 2013. 
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--recent work-->
+	<div class="fourthslide slide">
+		<div class="row">
+		  <div class="col-sm-4 col-sm-offset-4 text-center" style="margin-top: 10%">
+		   <h2>Multimedia</h2>
+		   <hr>
+		  </div> 
+		</div>
+
+		<div class="row" style="margin-top: 5%">
+			<div class="col-sm-4 text-center"/>	
+				 <h4>Data Visualization</h4>
+					<p><a href="http://chelsimoy.github.io/bike-crash/">San Francisco Bicycle-Injury Accidents 2000 - 2011</a>
+					<p><a href="http://chelsimoy.github.io/data-wild/">Gun Traces in Chicago</a>
+			</div>	
+
+			<div class="col-sm-4   text-center"/>
+				<h4>Video</h4>
+				<p><a href="http://www.nytimes.com/video/world/asia/100000002309661/buddhists-in-pink.html">"Buddhists in Pink" - New York Times</a>
+				<p><a href="http://www.washingtonpost.com/posttv/world/full-circle-by-chelsi-moy/2013/06/22/abfe4fbc-db6b-11e2-a016-92547bf094cc_video.html">	"Full Circle" - Washington Post </a>	
+				<p><a href="http://www.washingtonpost.com/posttv/world/the-pride-of-the-dancers-by-chelsea-moy/2013/06/22/b4393f62-db6a-11e2-a016-92547bf094cc_video.html"> "The Pride of the Dancers" - Washington Post </a>
+			</div>	
+			
+			<div class="col-sm-4 text-center"/>
+				<h4>Audio</h4>
+				<p><a href=" http://www.wbez.org/series/curious-city/biking-chicago-risky-proposition-108762"> "Is biking in Chicago a risky proposition?" - WBEZ</a>
+				<p><a href="http://www.wbez.org/series/curious-city/sniffing-chicago%E2%80%99s-wild-onion-108281">"Sniffing for Chicago's wild onion" - WBEZ </a>
+			</div>		
+			
+			
+		</div>
+	</div>
+						
+	<!--photo2_surfing-->	
+	<div class="fifthslide slide" style="position: relative;">
+		<div class="photocaption">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-8" style="position: absolute; bottom:50px; right:20px; text-align:right;">
+					<p >Waddell Beach, Santa Cruz, Calif. 2013</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!--Print-->
+	<div class="sixthslide slide">
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-5 text-center" style="margin-top: 5%">
+				<h2>Print</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center" style="line-spacing: 2em">	
+				<p><a href="http://missionlocal.org/2012/10/oconnell-highs-test-score-gains-top-the-district/"> "O’Connell High’s Test Score Gains Are Top in District" - Mission Local</a>
+				<p><a href="http://missionlocal.org/2012/10/buena-vista-horace-mann-one-year-since-merger-equity-emphasized/">"Buena Vista Horace Mann: A Year After Merger, Equity Is Emphasized" - Mission Local</a>
+				<p><a href="http://missionlocal.org/2012/09/mission-schools-paint-bleak-funding-picture-without-prop-30/">"Mission Schools Paint Bleak Funding Picture Without Prop. 30" - Mission Local </a>	
+				<p><a href="http://missoulian.com/news/local/um-scraps-biomass-heating-plant-apologizes-for-eco-terrorism-remark/article_8862e060-1d29-11e1-b5f9-0019bb2963f4.html">"UM scraps biomass heating plant, apologizes for 'eco-terrorism' remark"	- Missoulian <br>(Culmination of a yearlong investigation)</a>
+						
+				<p><a href="http://missoulian.com/news/local/article_6cc938f8-3739-11e0-a934-001cc4c002e0.html">"A troubled, tragic beauty found freedom, comfort on the rails after years of abuse" - Missoulian </a>
+				<p><a href="http://missoulian.com/news/state-and-regional/article_9ac2f506-a5a3-11de-ba74-001cc4c03286.html">"Recruiting on the rez: UM appeals directly to American Indian students" - Missoulian
+				<p><ahref="http://billingsgazette.com/news/state-and-regional/montana/article_a7b37a7c-8dde-59fb-8a81-fcd57947819a.html">"Sacrifices for Freedom" - Missoulian		</a>
+			</div>	
+		</div>	
+	</div>	
+		
+	<!--photo3_yellowstone-->	
+		<div class="seventhslide slide" style="position: relative">
+		 <div class="photocaption">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-8" style="position: absolute; bottom:50px; right:20px; text-align:right;">
+					<p>Yellowstone National Park. Christmas 2013. </p>
+				</div>
+			</div>
+		 </div>
+			
+		</div>
+		
+	<!--Resume-->
+	<div class="eighthslide slide">
+		<div class="col-sm-2 col-sm-offset-5 text-center" style="margin-top: 15% ">
+			<h2>Resume</h2>
+			<hr>
+			<a href="chelsi_moy_resume.pdf"><button type="download" class="btn btn-lg btn-primary">Download</button></a>
+		</div>	
+ 	</div>	
+	 
+	<!--Contact-->
+	<div class="ninthslide slide">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 text-center" style="margin-top: 10%">
+					<h2>Contact</h2>
+					<hr>
+					<h4>chelsimoy@gmail.com</h4>
+				</div>	
+				<div clas="container">
+					<div class="row">
+						<div class="col-sm-4 col-sm-offset-4 text-center" style="margin-top: 3%">
+							<ul class="list-inline">
+								<li><a href="https://www.facebook.com/chelsi.moy.1"><i class="fa fa-facebook fa-3x"></i></a>
+		                        </li>
+		                        <li><a href="https://twitter.com/chelsimoy"><i class="fa fa-twitter fa-3x"></i></a>
+		                        </li>
+								<li><a href="http://www.linkedin.com/pub/chelsi-moy/84/851/bb6"><i class="fa fa-linkedin fa-3x"></i></a>
+								</li>
+								<li><a href="http://instagram.com/chelsimoy"><i class="fa fa-instagram fa-3x"></i></a>
+								</li>
+					      </ul>
+					    </div>
+					</div>      
+				</div>	    
+			</div>
+		</div>			      
+ 	</div>
+	
+	<!--Instagram Api->
+	
+	/* <div class="tenthslide slide">
+	</div> 
+	
+	<!--end-->	
+		
+		
+		
+		
+		
+	</div>
+	
+</body>
+</html>
